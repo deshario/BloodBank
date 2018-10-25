@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/new_material_red"
+        android:padding="16dp"
+        android:text="Navigate to campaign location"
+        android:textColor="@color/fbwhite"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/menu_ok"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_check_white_36dp"
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/dark_gray_dark"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="OPEN MAP"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/menu_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_close_white_36dp"
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/dark_gray_dark"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="DISMISS"
+        android:textSize="16sp" />
+
+</LinearLayout>

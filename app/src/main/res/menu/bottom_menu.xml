@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_home_white_24dp" />
+
+    <item
+        android:id="@+id/incoming_requests"
+        android:title="Blood Request"
+        android:icon="@drawable/ic_invert_colors_white_36dp" />
+
+    <item
+        android:id="@+id/blood_centers"
+        android:title="Branch Request"
+        android:icon="@drawable/ic_pin_drop_black_24dp" />
+
+    <item
+        android:id="@+id/campaigns"
+        android:title="Campaigns"
+        android:icon="@drawable/ic_notifications_none_black_24dp" />
+
+    <item
+        android:id="@+id/profile"
+        android:title="More"
+        android:icon="@drawable/ic_settings_white_24dp" />
+
+</menu>

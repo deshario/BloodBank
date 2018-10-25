@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BloodBank</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="caption_text">I need bloodgroup for reason at hospital</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
+    <string name="facebook_app_id">2136454993233219</string>
+    <string name="facebook_login_protocal_scheme">fb2136454993233219</string>
+
+    <string name="middle_dot">•</string>
+
+</resources>

@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Dashboard" />
+
+        <item
+            android:id="@+id/new_request"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Create Request" />
+
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Verify Donations" />
+
+        <item
+            android:id="@+id/nav_discussion"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Book A Donation Date" />
+    </group>
+
+    <item android:title="Usage Records">
+        <menu>
+            <item
+                android:icon="@drawable/ic_place_black_24dp"
+                android:title="Donation History" />
+            <item
+                android:icon="@drawable/ic_place_black_24dp"
+                android:title="Request History" />
+        </menu>
+    </item>
+
+</menu>

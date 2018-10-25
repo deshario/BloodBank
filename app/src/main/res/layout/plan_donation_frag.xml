@@ -1,0 +1,156 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<com.applandeo.materialcalendarview.CalendarView-->
+    <!--android:id="@+id/calendarView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:forwardButtonSrc="@drawable/ic_chevron_right_white_24dp"-->
+    <!--app:previousButtonSrc="@drawable/ic_chevron_left_white_24dp"-->
+    <!--app:type="one_day_picker"-->
+    <!--app:abbreviationsBarColor="@color/colorAccent"-->
+    <!--app:abbreviationsLabelsColor="@color/material_primary"-->
+    <!--app:daysLabelsColor="@color/fbgrey"-->
+    <!--app:headerColor="@color/yellow"-->
+    <!--app:pagesColor="@color/orange"-->
+    <!--app:selectionColor="@color/fbwhite"-->
+    <!--app:selectionLabelColor="@color/material_success"-->
+    <!--app:anotherMonthsDaysLabelsColor="@color/material_primary"-->
+    <!--app:todayLabelColor="@color/material_red"-->
+    <!--/>-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:forwardButtonSrc="@drawable/ic_chevron_right_white_24dp"
+                app:headerColor="@color/new_material_red"
+                app:previousButtonSrc="@drawable/ic_chevron_left_white_24dp"
+                app:selectionColor="@color/new_material_red"
+                app:todayLabelColor="@color/material_red"
+                app:type="one_day_picker" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/img"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:background="@color/fbgrey" />-->
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/formCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                app:contentPadding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/M_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/edittext_style1"
+                        android:drawableLeft="@drawable/ic_today_white_24dp"
+                        android:drawablePadding="20dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Select Time"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/Mbranches"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/edittext_style1"
+                        android:drawableLeft="@drawable/ic_pin_drop_black_24dp"
+                        android:drawableTint="@color/fbwhite"
+                        android:drawablePadding="20dp"
+                        android:hint="Select Branch"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/MNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/edittext_style2"
+                        android:gravity="top|left"
+                        android:hint="Some Notes"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:overScrollMode="always"
+                        android:padding="10dp"
+                        android:scrollHorizontally="false"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/chk_agreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:buttonTint="@color/new_material_red"
+                        android:checked="false"
+                        android:text="I agree to the Bloody Terms and Privacy Policy"
+                        android:textColor="@color/new_material_red"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/reserve_now"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/new_material_red"
+                        android:elevation="5dp"
+                        android:text="RESERVE"
+                        android:textColor="@color/fbwhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fab_photo"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:backgroundTint="@color/new_material_red"-->
+    <!--android:clickable="true"-->
+    <!--android:src="@drawable/ic_info_outline_white_24dp"-->
+    <!--app:fabSize="normal"-->
+    <!--app:layout_anchor="@id/img"-->
+    <!--app:layout_anchorGravity="bottom|right|end" />-->
+
+</android.support.design.widget.CoordinatorLayout>
