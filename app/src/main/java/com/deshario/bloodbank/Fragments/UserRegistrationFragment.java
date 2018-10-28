@@ -4,9 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -59,7 +57,7 @@ public class UserRegistrationFragment extends DialogFragment {
     private List<BloodTypes> bloodTypesList;
 
     private TextView et_username;
-    private TextView et_phone;
+    //private TextView et_phone;
     private RadioGroup bloodRadio;
     private LinearLayout linearLayout;
     private TextView et_pass,et_confirm_pass;
@@ -141,7 +139,7 @@ public class UserRegistrationFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setStyle(DialogFragment.STYLE_NORMAL, R.style.dialog_theme);
+        //setStyle(DialogFragment.STYLE_NORMAL, R.style.FullScreenDialogStyle);
         context = getActivity().getApplicationContext();
         if (savedInstanceState == null) {
             restoreArguments(getArguments());
@@ -172,7 +170,7 @@ public class UserRegistrationFragment extends DialogFragment {
         Dialog dialog = getDialog();
         if (dialog != null) {
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT); //width,height
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         }
     }
 
@@ -186,7 +184,7 @@ public class UserRegistrationFragment extends DialogFragment {
 
     private void bindView(View view){
         et_username = (TextView) view.findViewById(R.id.Musername);
-        et_phone = (TextView) view.findViewById(R.id.Mphone);
+        //et_phone = (TextView) view.findViewById(R.id.Mphone);
         et_pass = (TextView) view.findViewById(R.id.Mpass);
         et_confirm_pass = (TextView) view.findViewById(R.id.MConfirmpass);
         sign_in = (TextView) view.findViewById(R.id.sign_in);
@@ -220,14 +218,16 @@ public class UserRegistrationFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 final int blood_id = checked_blood;
-                final String phone = et_phone.getText().toString();
+                //final String phone = et_phone.getText().toString();
+                final String phone = "";
                 final String username = et_username.getText().toString();
                 final String password = et_pass.getText().toString();
                 final String confirm_password = et_confirm_pass.getText().toString();
                 final String firebase_token = token;
 
-                if (!validate(blood_id, phone, username, password, confirm_password, firebase_token)) {
+                if (!validate(blood_id, username, password, confirm_password, firebase_token)) {
                     //Toast.makeText(context, "All fields Required !", Toast.LENGTH_SHORT).show();
+                    String info = "Set error field";
                 } else {
                     //Toast.makeText(context,"phone = "+phone+"\nUsername = "+username+"\nPassword = "+password+"\nConfirm Password = "+confirm_password+"\nFBID = "+firebase_token,Toast.LENGTH_LONG).show();
                     register(blood_id, phone, username, confirm_password, firebase_token);
@@ -236,12 +236,12 @@ public class UserRegistrationFragment extends DialogFragment {
         });
     }
 
-    public boolean validate(int blood, String phone, String username, String password, String confirm_password, String firebase_token) {
+    public boolean validate(int blood, String username, String password, String confirm_password, String firebase_token) {
         boolean valid = true;
 
-        if (phone.isEmpty()){
-            et_phone.setError("Invalid Phone Number");
-        }
+//        if (phone.isEmpty()){
+//            et_phone.setError("Invalid Phone Number");
+//        }
 
         if (username.isEmpty()){
             et_username.setError("Please fill this field");
@@ -308,7 +308,7 @@ public class UserRegistrationFragment extends DialogFragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 hideDialog();
-                Toast.makeText(context, "" + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, " " + error, Toast.LENGTH_SHORT).show();
             }
         }
         ) {
@@ -317,7 +317,6 @@ public class UserRegistrationFragment extends DialogFragment {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", username);
                 params.put("blood_group", String.valueOf(blood_id));
-                params.put("phone", phone);
                 params.put("virtual_password", confirm_password);
                 params.put("profile_token",firebase_token);
                 return params;

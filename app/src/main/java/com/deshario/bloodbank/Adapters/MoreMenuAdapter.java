@@ -170,7 +170,7 @@ public class MoreMenuAdapter extends RecyclerView.Adapter<MoreMenuAdapter.MoreMe
             pDialog.setCancelable(false);
             pDialog.setMessage("Loading");
             showDialog();
-            final String phone = Deshario_Functions.getUserinfo(context, "phone", false);
+            final String username = Deshario_Functions.getUserinfo(context, "username", false);
             StringRequest postRequest = new StringRequest(Request.Method.POST, WEBAPI.URL_REMOVE_TOKEN,
                     new Response.Listener<String>() {
                         @Override
@@ -207,7 +207,7 @@ public class MoreMenuAdapter extends RecyclerView.Adapter<MoreMenuAdapter.MoreMe
                 @Override
                 protected Map<String, String> getParams() {
                     Map<String, String> params = new HashMap<String, String>();
-                    params.put("phone", String.valueOf(phone));
+                    params.put("virtual_user", String.valueOf(username));
                     return params;
                 }
             };

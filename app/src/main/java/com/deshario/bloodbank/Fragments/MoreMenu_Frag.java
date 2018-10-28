@@ -130,7 +130,7 @@ public class MoreMenu_Frag extends Fragment {
     }
 
     private void updateToken() {
-        final String phone = Deshario_Functions.getUserinfo(context,"phone",false);
+        final String username = Deshario_Functions.getUserinfo(context,"username",false);
         final String token = FirebaseInstanceId.getInstance().getToken();
         StringRequest postRequest = new StringRequest(Request.Method.POST, WEBAPI.URL_UPDATE_TOKEN,
                 new Response.Listener<String>() {
@@ -159,7 +159,7 @@ public class MoreMenu_Frag extends Fragment {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("phone", phone);
+                params.put("virtual_user", username);
                 params.put("profile_token", token);
                 return params;
             }

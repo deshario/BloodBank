@@ -1,9 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linear_border"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/new_material_red">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp10"
                 android:layout_marginRight="@dimen/dp10"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/new_material_red">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,23 +65,23 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Phone No"
-                        android:textColor="@color/fbwhite"
-                        android:textSize="18sp" />
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Phone No"-->
+                    <!--android:textColor="@color/fbwhite"-->
+                    <!--android:textSize="18sp" />-->
 
-                    <EditText
-                        android:id="@+id/Mphone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_transparent"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:padding="12dp"
-                        android:singleLine="true"
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                    <!--<EditText-->
+                    <!--android:id="@+id/Mphone"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/edittext_transparent"-->
+                    <!--android:inputType="number"-->
+                    <!--android:maxLength="10"-->
+                    <!--android:padding="12dp"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="PIN"
+                        android:text="Password"
                         android:textColor="@color/fbwhite"
                         android:textSize="18sp" />
 
@@ -113,7 +114,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/edittext_transparent"
-                        android:inputType="number"
+                        android:inputType="textPassword"
                         android:padding="12dp"
                         android:singleLine="true"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -122,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Confirm PIN"
+                        android:text="Confirm Password"
                         android:textColor="@color/fbwhite"
                         android:textSize="18sp" />
 
@@ -131,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/edittext_transparent"
-                        android:inputType="number"
+                        android:inputType="textPassword"
                         android:padding="12dp"
                         android:singleLine="true"
                         android:textAppearance="?android:attr/textAppearanceMedium" />

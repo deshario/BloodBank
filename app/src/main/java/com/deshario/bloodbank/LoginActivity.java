@@ -36,7 +36,6 @@ import org.json.JSONObject;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,10 +44,10 @@ public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     ShareDialog shareDialog;
     ProgressDialog mDialog,pDialog;
-    Button login_btn,continue_with_fb;
+    Button login_btn;//continue_with_fb;
     TextView register_btn;
     String firebase_token;
-    EditText phone,pass;
+    EditText user,pass;
     private SessionManager session;
 
     @Override
@@ -62,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
         shareDialog = new ShareDialog(this);
         firebase_token = FirebaseInstanceId.getInstance().getToken();
         login_btn = (Button)findViewById(R.id.btn_login);
-        continue_with_fb = (Button)findViewById(R.id.fb_login);
+        //continue_with_fb = (Button)findViewById(R.id.fb_login);
         register_btn = (TextView)findViewById(R.id.sign_up);
-        phone = (EditText)findViewById(R.id.phoneno);
+        user = (EditText)findViewById(R.id.user_name);
         pass = (EditText)findViewById(R.id.pass);
 
         if (session.isLoggedIn()) {
@@ -76,16 +75,16 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String Mphone = phone.getText().toString();
+                final String Muser = user.getText().toString();
                 final String Mpass = pass.getText().toString();
-                if(Mphone.isEmpty()){
-                    phone.setError("Please fill this field");
+                if(Muser.isEmpty()){
+                    user.setError("Please fill this field");
                 }else if(Mpass.isEmpty()){
                     pass.setError("Please fill this field");
                 }else if(firebase_token.isEmpty()){
                     Toast.makeText(LoginActivity.this,"Token Error",Toast.LENGTH_SHORT).show();
                 }else{
-                    ManageLogin(Mphone,Mpass,firebase_token);
+                    ManageLogin(Muser,Mpass,firebase_token);
                 }
             }
         });
@@ -103,16 +102,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        continue_with_fb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile","email"));
-//                AccessToken accessToken = AccessToken.getCurrentAccessToken();
-//                if(accessToken != null){
-//                    LoginManager.getInstance().logOut();
-//                }
-            }
-        });
+//        continue_with_fb.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile","email"));
+////                AccessToken accessToken = AccessToken.getCurrentAccessToken();
+////                if(accessToken != null){
+////                    LoginManager.getInstance().logOut();
+////                }
+//            }
+//        });
 
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -147,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void ManageLogin(final String phone, final String pass, final String token){
+    private void ManageLogin(final String user, final String pass, final String token){
         pDialog = new ProgressDialog(LoginActivity.this);
         pDialog.setMessage("Validating Login...");
         showDialog();
@@ -183,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("phone", phone);
+                params.put("virtual_user", user);
                 params.put("virtual_password", pass);
                 params.put("profile_token", token);
                 return params;

@@ -40,16 +40,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Phone No"
+                    android:text="Username"
                     android:textColor="@color/fbwhite"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/phoneno"
+                    android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_transparent"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:padding="12dp"
                     android:singleLine="true"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="PIN"
+                    android:text="Password"
                     android:textColor="@color/fbwhite"
                     android:textSize="18sp" />
 
@@ -67,43 +67,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_transparent"
-                    android:inputType="number"
+                    android:inputType="textPassword"
                     android:padding="12dp"
                     android:singleLine="true"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Forgot Password"
-                    android:textColor="@color/default_bootstrap"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="right"
-                    android:padding="10dp"/>
 
                 <Button
                     android:id="@+id/btn_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_style"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="22dp"
                     android:elevation="5dp"
                     android:text="Sign in"
                     android:layout_gravity="center"
                     android:textColor="@color/default_bootstrap"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/fb_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_style"
-                    android:layout_marginTop="8dp"
-                    android:text="Continue with Facebook"
-                    android:layout_gravity="center"
-                    android:textColor="@color/default_bootstrap"
-                    android:textSize="18sp" />
+                <!--<Button-->
+                    <!--android:id="@+id/fb_login"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/button_style"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="Continue with Facebook"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:textColor="@color/default_bootstrap"-->
+                    <!--android:textSize="18sp" />-->
 
                 <!--<com.facebook.login.widget.LoginButton-->
                     <!--android:layout_width="wrap_content"-->
